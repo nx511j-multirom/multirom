@@ -76,6 +76,9 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := libmultirom
 LOCAL_MODULE_TAGS := eng
 LOCAL_SHARED_LIBRARIES := libcutils libc libm libpng libz libft2
+# clone libbootimg to /system/extras/ from
+# https://github.com/Tasssadar/libbootimg.git
+LOCAL_STATIC_LIBRARIES := libbootimg
 LOCAL_CFLAGS += $(common_C_FLAGS)
 LOCAL_SRC_FILES := $(common_SRC_FILES)
 LOCAL_C_INCLUDES += $(common_C_INCLUDES)
