@@ -1614,7 +1614,7 @@ int multirom_load_kexec(struct multirom_status *s, struct multirom_rom *rom)
 
     kexec_init(&kexec, kexec_path);
     kexec_add_arg(&kexec, "--mem-min="MR_KEXEC_MEM_MIN);
-#ifdef MR_KEXEC_DTB
+#if defined(MR_KEXEC_DTB) && !defined(MR_KEXEC_ARM64)
     kexec_add_arg_prefix(&kexec, "--boardname=", TARGET_DEVICE);
 #endif
 
